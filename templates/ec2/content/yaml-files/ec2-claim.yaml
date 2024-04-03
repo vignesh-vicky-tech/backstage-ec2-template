@@ -1,0 +1,15 @@
+---
+apiVersion: compositions.io/v1alpha1
+kind: InstanceClaim
+metadata:
+  name: ${{ values.name | dump }}
+spec:
+  parameters:
+    region: ${{ values.region | dump }}
+    ami: ${{ values.ami | dump }}
+    instanceType: ${{ values.instanceType | dump }}
+    keyName: ${{ values.keyName | dump }}
+    Name: ${{ values.name | dump }}
+
+  compositionRef:
+    name: ec2-instance
